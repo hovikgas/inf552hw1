@@ -33,6 +33,9 @@ X,y = car[:,:6], car[:,6]
 # make sure that all the values in numpy are int to avoid potential numpy problems
 X,y = X.astype(int), y.astype(int)
 
+# import scikit learn
+import sklearn
+
 # import the cross validation module from scikit learn
 from sklearn import cross_validation
 

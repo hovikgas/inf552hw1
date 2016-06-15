@@ -31,15 +31,15 @@ X_train, X_test, y_train, y_test = sklearn.cross_validation.train_test_split(X,y
 # import ensemble from scikit
 from sklearn import ensemble
 
-# set up the Random Forest Classifier with 500 iterations
-clf = ensemble.RandomForestClassifier(n_estimators=500)
+# set up the Random Forest Classifier with 10 trees
+clf = ensemble.RandomForestClassifier(n_estimators=10)
 
 # feed the classifier with the training data
 clf.fit(X_train,y_train)
 
 # check the accuracy of the classification on the test data
 clf.score(X_test,y_test)
-# got ~70% <-- not bad!
+# got ~97% <-- not bad!
 
 # let's see if we can improve it by scaling the data between max and min
 from sklearn import preprocessing
@@ -50,7 +50,7 @@ X_test_scaled = scaler.fit_transform(X_test)
 # try it again with the newly scaled data
 clf.fit(X_train_scaled,y_train)
 clf.score(X_test_scaled,y_test)
-# got 98% this time, way better!
+# got 98% this time, improvement!
 
 # plot the values to see what is going on
 y_pred = clf.predict(X_test_scaled)

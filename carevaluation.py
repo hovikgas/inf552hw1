@@ -34,16 +34,22 @@ from sklearn import ensemble
 # set up the Random Forest Classifier with 10 trees
 clf = ensemble.RandomForestClassifier(n_estimators=10, verbose=1)
 
-# feed the classifier with the training data
+# fit the classifier with the training data
 clf.fit(X_train,y_train)
 
 # check the accuracy of the classification on the test data
-clf.score(X_test,y_test)
-# got ~97% <-- sweeeet!
+clf.score(X_test,y_test) # got ~97% <-- sweeeet!
 
-# see which features are the most important
+# see which how many features were used and which are the most important
+clf.n_features_ # 6
 clf.feature_importances_
-# looks like safety and the number of people it can hold are the most important (.24 and .30, respectively)
+# buying - 0.15459505
+# maintenance - 0.14216624
+# doors - 0.06176783
+# persons - 0.24950191
+# lug_boot - 0.09016715
+# safety - 0.30180183
+# looks like all 6 were used, but safety/persons are the most important and doors/lug_boot least
 
 # plot the values to see what is going on
 y_pred = clf.predict(X_test)

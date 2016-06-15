@@ -39,21 +39,10 @@ clf.fit(X_train,y_train)
 
 # check the accuracy of the classification on the test data
 clf.score(X_test,y_test)
-# got ~97% <-- not bad!
-
-# let's see if we can improve it by scaling the data between max and min
-from sklearn import preprocessing
-scaler = preprocessing.MinMaxScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.fit_transform(X_test)
-
-# try it again with the newly scaled data
-clf.fit(X_train_scaled,y_train)
-clf.score(X_test_scaled,y_test)
-# got 98% this time, improvement!
+# got ~97% <-- sweeeet!
 
 # plot the values to see what is going on
-y_pred = clf.predict(X_test_scaled)
+y_pred = clf.predict(X_test)
 
 # import matplot so we can plot it
 import matplotlib.pyplot as plt

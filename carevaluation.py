@@ -9,21 +9,6 @@ import pandas as pd
 df = pd.read_csv('car.csv',header=0)
 df.info()
 
-# replace all categorical data into numeric, so we can use it for ML
-'''
-df = df.replace('5more',6)
-df = df.replace('more',5)
-df = df.replace('vhigh',4)
-df = df.replace('high',3)
-df = df.replace('med',2)
-df = df.replace('low',1)
-df = df.replace('small',1)
-df = df.replace('big',3)
-df = df.replace('unacc',1)
-df = df.replace('acc',2)
-df = df.replace('good',3)
-df = df.replace('vgood',4)
-'''
 # convert from pandas to numpy
 car = df.values
 

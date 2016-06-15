@@ -32,7 +32,7 @@ X_train, X_test, y_train, y_test = sklearn.cross_validation.train_test_split(X,y
 from sklearn import ensemble
 
 # set up the Random Forest Classifier with 10 trees
-clf = ensemble.RandomForestClassifier(n_estimators=10)
+clf = ensemble.RandomForestClassifier(n_estimators=10, verbose=1)
 
 # feed the classifier with the training data
 clf.fit(X_train,y_train)

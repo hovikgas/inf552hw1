@@ -41,6 +41,10 @@ clf.fit(X_train,y_train)
 clf.score(X_test,y_test)
 # got ~97% <-- sweeeet!
 
+# see which features are the most important
+clf.feature_importances_
+# looks like safety and the number of people it can hold are the most important (.24 and .30, respectively)
+
 # plot the values to see what is going on
 y_pred = clf.predict(X_test)
 
